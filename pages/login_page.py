@@ -19,7 +19,7 @@ class LoginPage(BasePage):
         self.should_be_register_form()
 
     def should_be_login_url(self):
-        assert driver.current_url == 'http://selenium1py.pythonanywhere.com/ru/accounts/login/'
+        assert self.browser.current_url == 'https://selenium1py.pythonanywhere.com/en-gb/accounts/login/'
 
     def should_be_login_form(self):
         # реализуйте проверку, что есть форма логина
