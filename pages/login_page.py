@@ -1,15 +1,7 @@
 from .base_page import BasePage
+from .locators import LoginPageLocators
 from selenium.webdriver.common.by import By
 from selenium import webdriver
-
-class LoginPageLocators():
-
-    registration_email = (By.CSS_SELECTOR, "#id_registration-email")
-    registration_password = (By.CSS_SELECTOR, "#id_registration-password1")
-    return_registration_password = (By.CSS_SELECTOR, "#id_registration-password2")
-
-    login_user = (By.CSS_SELECTOR, "#id_login-username")
-    password_user = (By.CSS_SELECTOR, "#id_login-password")
 
 class LoginPage(BasePage):
 
