@@ -1,7 +1,9 @@
 from selenium.webdriver.common.by import By
 
-class MainPageLocators:
-    LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')
+class BasePageLocators:
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    CART_BUTTON = (By.CSS_SELECTOR, ".btn-group.btn-group")
 
 class LoginPageLocators:
     registration_email = (By.CSS_SELECTOR, "#id_registration-email")
@@ -9,6 +11,9 @@ class LoginPageLocators:
     return_registration_password = (By.CSS_SELECTOR, "#id_registration-password2")
     login_user = (By.CSS_SELECTOR, "#id_login-username")
     password_user = (By.CSS_SELECTOR, "#id_login-password")
+
+class MainPageLocators:
+    LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')
 
 class ProductPageLocators:
     add_product_button = (By.CSS_SELECTOR, ".btn.btn-lg.btn-primary.btn-add-to-basket")
@@ -18,7 +23,8 @@ class ProductPageLocators:
     massage_for_add_product =  (By.XPATH, "//*[@id='messages']/div[1]/div/strong")
     massage_sale_price = (By.XPATH, "//*[@id='messages']/div[3]/div")
 
-class BasePageLocators:
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+class BasketPageLocators:
+    MASSAGE_EMPTY_BASKET = (By.ID, "content_inner")
+    BASKET_ITEMS = (By.CSS_SELECTOR, ".basket-items")
+
 

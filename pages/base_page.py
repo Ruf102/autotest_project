@@ -1,5 +1,4 @@
 from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import NoAlertPresentException
 from selenium.common.exceptions import TimeoutException
 import math
 from selenium.webdriver.support import expected_conditions as EC
@@ -57,3 +56,10 @@ class BasePage():
 
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
+
+    def should_be_cart_button(self):
+        assert self.is_element_present(*BasePageLocators.CART_BUTTON)
+
+    def go_to_cart_page(self):
+        cart_page_link = self.browser.find_element(*BasePageLocators.CART_BUTTON)
+        cart_page_link.click()

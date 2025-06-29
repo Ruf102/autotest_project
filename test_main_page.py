@@ -1,4 +1,8 @@
+import time
+
 from selenium.webdriver.common.by import By
+
+from .pages.basket_page import BasketPage
 from .pages.main_page import MainPage
 from .pages.login_page import LoginPage
 
@@ -17,3 +21,12 @@ def test_guest_should_see_login_link(browser):
     page = MainPage(browser, link)   # создается объект страницы (главной)
     page.open()                      # открывается страница в браузере
     page.should_be_login_link()      # проверяется наличие ссылки для входа
+
+def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
+    link = "http://selenium1py.pythonanywhere.com/"
+    page = MainPage(browser, link)
+    page.open()
+    page.should_be_cart_button()
+    page.go_to_cart_page()
+    page = BasketPage(browser,  browser.current_url)
+    page.should_be_basket_empty_page()
