@@ -18,4 +18,7 @@ class ProductPageLocators:
     massage_for_add_product =  (By.XPATH, "//*[@id='messages']/div[1]/div/strong")
     massage_sale_price = (By.XPATH, "//*[@id='messages']/div[3]/div")
 
+class BasePageLocators:
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
 

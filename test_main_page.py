@@ -17,5 +17,3 @@ def test_guest_should_see_login_link(browser):
     page = MainPage(browser, link)   # создается объект страницы (главной)
     page.open()                      # открывается страница в браузере
     page.should_be_login_link()      # проверяется наличие ссылки для входа
-
-#def test_

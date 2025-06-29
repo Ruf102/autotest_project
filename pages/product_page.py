@@ -24,6 +24,13 @@ class ProductPage(BasePage):
         assert (self.browser.find_element(*ProductPageLocators.product_price).text in
                 self.browser.find_element(*ProductPageLocators.massage_sale_price).text), "Цена товара не совпадает, с ценой товара добавленного в корзину"
 
+    def should_be_success_message_disappeared(self):
+        assert self.is_disappeared(*ProductPageLocators.massage_for_add_product), "Сообщение об успешном добавлении товара не исчезло, через определенное время"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.massage_for_add_product), "Сообщение об успешном выполнении отображается, но не должно"
+
+
 
 
 
