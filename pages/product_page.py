@@ -14,7 +14,6 @@ class ProductPage(BasePage):
         add_but = self.browser.find_element(*ProductPageLocators.add_product_button)
         assert add_but, "Не найдена кнопка добавления товара"
         add_but.click()
-        self.solve_quiz_and_get_code()
 
     def should_be_add_in_cart(self):
         assert (self.browser.find_element(*ProductPageLocators.product_name).text ==

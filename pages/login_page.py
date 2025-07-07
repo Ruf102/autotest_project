@@ -1,7 +1,5 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators
-from selenium.webdriver.common.by import By
-from selenium import webdriver
 
 class LoginPage(BasePage):
 
@@ -26,4 +24,16 @@ class LoginPage(BasePage):
             *LoginPageLocators.registration_password), "не найдено поле ввода пароля в форме регистрации"
         assert self.is_element_present(
             *LoginPageLocators.return_registration_password), "не найдено поле повторного ввода пароля  в форме регистрации"
+
+    def register_new_user(self, email, password):
+        email_registration = self.browser.find_element(*LoginPageLocators.registration_email)
+        email_registration.send_keys(email)
+        password_registration = self.browser.find_element(*LoginPageLocators.registration_password)
+        password_registration.send_keys(password)
+        password_registration_return = self.browser.find_element(*LoginPageLocators.return_registration_password)
+        password_registration_return.send_keys(password)
+        button_registration_submit = self.browser.find_element(*LoginPageLocators.registration_submit)
+        button_registration_submit.click()
+
+
 
